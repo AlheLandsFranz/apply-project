@@ -1,8 +1,8 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
 
-@Schema()
-export class Post extends Document{
+@Schema({ timestamps: true })
+export class News extends Document{
 
     // story_title
     @Prop()
@@ -12,13 +12,12 @@ export class Post extends Document{
     @Prop()
     author: string;
 
-    // created_at
-    @Prop()
-    created_at: string;
-
     // comment_text
     @Prop()
     coments: string;
+
+    @Prop({unique: true})
+    apiId: string
 }
 
-export const PostSchema = SchemaFactory.createForClass(Post);
+export const NewsSchema = SchemaFactory.createForClass(News);

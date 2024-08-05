@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
-import { PostsModule } from './posts/posts.module';
+import { NewsModule } from './news/news.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
-    PostsModule, 
+    NewsModule, 
+    ScheduleModule.forRoot(),
     MongooseModule.forRoot('mongodb://localhost:27017/apply-project')
   ],
   controllers: [],
