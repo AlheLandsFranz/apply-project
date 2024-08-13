@@ -44,7 +44,7 @@ export class NewsRepository {
     }
 
     async findById(id: string) {
-        const news = this.newsModel.findById({ _id: id }).exec();
+        const news = await this.newsModel.findById({ _id: id }).exec();
 
         if (!news) {
             throw new NotFoundException(`News with id ${id} not found`)
