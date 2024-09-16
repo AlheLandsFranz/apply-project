@@ -27,7 +27,7 @@ export class NewsController implements OnModuleInit {
     return this.newsService.remove(id);
   }
 
-  async onModuleInit() {
+  async onModuleInit(): Promise<any> {
     await this.newsService.loadNews();
   }
 }

@@ -16,4 +16,6 @@ export class CreateNewsDto {
 
     @IsString()
     apiId: string;
+
+    isDeleted: Date | null;
 }
